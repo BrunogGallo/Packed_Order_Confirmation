@@ -19,7 +19,8 @@ ms_client = MintsoftOrderClient()
 try:
     
     status_id = 20
-    since_updated = datetime.now() - timedelta(minutes = 30)
+    now = datetime.now().replace(minute=0, second=0, microsecond=0)
+    since_updated = now - timedelta(minutes = 15)
     
     print(f"Consultando órdenes que hayan sido packeadas desde {since_updated}")
     clients = ms_client.get_clients()

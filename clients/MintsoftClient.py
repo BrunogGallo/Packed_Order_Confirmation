@@ -71,16 +71,3 @@ class MintsoftOrderClient:
             return []
         
         return r.json()
-    
-try:
-    client = MintsoftOrderClient()
-
-    status_id = 20
-    since_updated = datetime.now() - timedelta(minutes = 40)
-    response = client.get_orders(since_updated, status_id)
-
-    print(response)
-    print(since_updated)
-
-except Exception as e:
-    print(e)
