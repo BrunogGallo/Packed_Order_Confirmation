@@ -45,7 +45,7 @@ try:
             if order_number not in todays_orders:
                 CLIENT.chat_postMessage(
                     channel = CHANNEL,
-                    text = f"Numero de Orden: {order_number} - Cliente: {client_name} - Cantidad de Items: {items}"
+                    text = f"Orden: {order_number} | Cliente: {client_name} | Items: {items}"
                 )
                 print("Mensaje enviado con exito")
                 #Almacenar el numero de orden
