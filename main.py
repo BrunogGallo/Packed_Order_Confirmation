@@ -20,7 +20,7 @@ try:
     
     status_id = 20
     now = datetime.now().replace(minute=0, second=0, microsecond=0)
-    since_updated = now - timedelta(minutes = 195) # resto 3h y 15min, las 3h por la zona horaria de Railway
+    since_updated = now - timedelta(minutes = 0) # resto 3h y 15min, las 3h por la zona horaria de Railway
     
     print(f"Consultando órdenes que hayan sido packeadas desde {since_updated}")
     clients = ms_client.get_clients()
