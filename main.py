@@ -24,7 +24,7 @@ try:
     else: # Para la 2da, 30 y 45
         now = datetime.now().replace(minute=30, second=0, microsecond=0)
 
-    since_updated = now + timedelta(minutes = 60) # Agrego 1h para que se ajuste al horario de Mintsoft
+    since_updated = now + timedelta(minutes = 30) # Agrego 1h para que se ajuste al horario de Mintsoft
     
     print(f"Consultando órdenes que hayan sido packeadas desde {since_updated}")
     clients = ms_client.get_clients()
