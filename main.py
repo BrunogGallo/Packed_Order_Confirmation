@@ -19,8 +19,12 @@ ms_client = MintsoftOrderClient()
 try:
     
     status_id = 20
-    now = datetime.now().replace(minute=0, second=0, microsecond=0)
-    since_updated = now - timedelta(minutes = 0) # resto 3h y 15min, las 3h por la zona horaria de Railway
+    if datetime.now().minute > 30: # Si es la 1er ejecucionde la hora, 00 y 15
+        now = datetime.now().replace(minute=0, second=0, microsecond=0)
+    else: # Para la 2da, 30 y 45
+        now = datetime.now().replace(minute=30, second=0, microsecond=0)
+
+    since_updated = now + timedelta(minutes = 60) # Agrego 1h para que se ajuste al horario de Mintsoft
     
     print(f"Consultando órdenes que hayan sido packeadas desde {since_updated}")
     clients = ms_client.get_clients()
